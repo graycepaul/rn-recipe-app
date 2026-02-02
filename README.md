@@ -1,47 +1,51 @@
-# React Native Expo Template
+# Cookbook – React Native Recipe App
 
-A reusable React Native template built with **Expo**, **Expo Router**, and **NativeWind**, focused on **structure, navigation, and state**, not design opinions.
+A clean, modern **recipe discovery mobile app** built with **React Native**, **Expo**, and **Expo Router**.
 
-This template is intended to be cloned and adapted for multiple projects.
+This project demonstrates real-world mobile app structure, navigation, state management, and UI polish — with a focus on **clarity, scalability, and production-ready patterns**.
 
 ---
 
 ## ✨ Features
 
-- Expo SDK
-- Expo Router (file-based navigation)
-- Auth vs App route separation
-- Persistent authentication (AsyncStorage)
-- App readiness / splash gate
-- Tabs navigation
-- NativeWind (Tailwind-style utilities)
-- Web + iOS + Android support
-- Clean, predictable project structure
-- No enforced UI design system
+- File-based navigation with Expo Router
+- Auth flow (login / signup UI scaffold)
+- App readiness & loading gate
+- Recipe discovery with search and category filters
+- Recipe details with ingredients & step-by-step instructions
+- Persistent favorites using AsyncStorage
+- Clean, modern UI with NativeWind (Tailwind-style styling)
+- Empty states and error handling
+- Works on iOS, Android, and Web
 
 ---
 
-## 📁 Project Structure
+## 📱 App Flow
 
-```text
-app/
-  _layout.tsx          # Root layout (providers + splash gate)
-  index.tsx            # Entry guard (auth vs app)
-  (auth)/              # Authentication flow
-    login.tsx
-  (app)/               # Protected app routes
-    _layout.tsx        # App-level auth guard
-    (tabs)/            # Bottom tabs
-      _layout.tsx
-      index.tsx
-      settings.tsx
+1. **Login / Signup** (UI scaffold)
+2. **Home**
+   - Search recipes
+   - Filter by category
+3. **Recipe Details**
+   - Ingredients
+   - Cooking steps
+   - Save / remove from favorites
+4. **Favorites**
+   - Persisted locally on device
+5. **Settings**
+   - Profile & app info
+   - Logout
 
-components/            # Reusable components (project-specific)
-context/               # React context (auth, etc.)
-constants/             # App constants (storage keys, etc.)
-assets/                # Images, icons, splash
-global.css             # NativeWind styles
-```
+---
+
+## 🧱 Tech Stack
+
+- **React Native**
+- **Expo**
+- **Expo Router**
+- **NativeWind**
+- **AsyncStorage**
+- **TypeScript**
 
 ---
 

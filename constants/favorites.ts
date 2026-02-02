@@ -1,0 +1,1 @@
+export const FAVORITES_KEY = 'FAVORITE_RECIPES';

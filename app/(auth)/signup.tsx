@@ -1,6 +1,5 @@
 import { View, Text, Pressable, TextInput } from 'react-native';
 import { useRouter } from 'expo-router';
-import { useAuth } from 'context/AuthContext';
 
 const styles = {
   container: 'flex-1 items-center justify-center bg-neutral-50 px-6',
@@ -14,20 +13,16 @@ const styles = {
   linkHighlight: 'font-medium text-neutral-900',
 };
 
-export default function Login() {
-  const { login } = useAuth();
+export default function Signup() {
   const router = useRouter();
-
-  const handleLogin = async () => {
-    await login();
-    router.replace('/(app)');
-  };
 
   return (
     <View className={styles.container}>
       <View className={styles.card}>
-        <Text className={styles.title}>Welcome back</Text>
-        <Text className={styles.subtitle}>Sign in to continue</Text>
+        <Text className={styles.title}>Create account</Text>
+        <Text className={styles.subtitle}>Sign up to start saving recipes</Text>
+
+        <TextInput placeholder="Name" className={styles.input} />
 
         <TextInput
           placeholder="Email address"
@@ -38,13 +33,13 @@ export default function Login() {
 
         <TextInput placeholder="Password" secureTextEntry className={styles.input} />
 
-        <Pressable onPress={handleLogin} className={styles.button}>
-          <Text className={styles.buttonText}>Sign in</Text>
+        <Pressable onPress={() => router.replace('/login')} className={styles.button}>
+          <Text className={styles.buttonText}>Create account</Text>
         </Pressable>
 
-        <Pressable onPress={() => router.push('/signup')}>
+        <Pressable onPress={() => router.back()}>
           <Text className={styles.link}>
-            Don’t have an account? <Text className={styles.linkHighlight}>Sign up</Text>
+            Already have an account? <Text className={styles.linkHighlight}>Sign in</Text>
           </Text>
         </Pressable>
       </View>
